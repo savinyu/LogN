@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { EXTENSION_STORE_URL } from "./lib/extension";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -23,8 +24,15 @@ const nextConfig: NextConfig = {
     clock: { stale: 1800, revalidate: 60, expire: 300 },
   },
   // v1's dashboard is split across the v2 pages; Today is the new home (PLAN-v2.md §3).
+  // /extension is the short link to the extension's store page, for posts and the README. It's
+  // temporary so the target can change; /extension/connect is a page and isn't matched.
   async redirects() {
-    return [{ source: "/dashboard", destination: "/today", permanent: true }];
+    return [
+      { source: "/dashboard", destination: "/today", permanent: true },
+      ...(EXTENSION_STORE_URL
+        ? [{ source: "/extension", destination: EXTENSION_STORE_URL, permanent: false }]
+        : []),
+    ];
   },
   turbopack: {
     rules: {
