@@ -18,6 +18,7 @@ export const PROBLEM_HOSTS: Record<ExtensionPlatformId, readonly string[]> = {
   hackerrank: ["www.hackerrank.com"],
   interviewbit: ["www.interviewbit.com"],
   gfg: ["www.geeksforgeeks.org", "practice.geeksforgeeks.org"],
+  cses: ["cses.fi", "www.cses.fi"],
 };
 
 /** A real calendar day (YYYY-MM-DD) from 2000 on: rejects 2026-02-31, 2026-13-01, 0000-00-00. */

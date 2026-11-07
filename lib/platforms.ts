@@ -102,6 +102,16 @@ export const PLATFORM_META: Record<PlatformId, PlatformMeta> = {
     source: "extension",
     history: "full",
   },
+  cses: {
+    id: "cses",
+    name: "CSES",
+    short: "CSES",
+    profileUrl: (handle) => `https://cses.fi/user/${enc(handle)}`,
+    handleHint: "your-cses-user-id",
+    handlePattern: /^[A-Za-z0-9_.-]{1,30}$/,
+    source: "extension",
+    history: "full",
+  },
 };
 
 /** Display order: the server-synced platforms, then the extension ones. */
@@ -114,6 +124,7 @@ export const PLATFORM_ORDER: PlatformId[] = [
   "hackerrank",
   "interviewbit",
   "gfg",
+  "cses",
 ];
 
 export function isSyncedPlatform(platform: PlatformId): platform is SyncedPlatformId {

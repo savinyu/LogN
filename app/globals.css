@@ -47,6 +47,7 @@
   --color-platform-hackerrank: var(--platform-hackerrank);
   --color-platform-interviewbit: var(--platform-interviewbit);
   --color-platform-gfg: var(--platform-gfg);
+  --color-platform-cses: var(--platform-cses);
   --color-heat-0: var(--heat-0);
   --color-heat-1: var(--heat-1);
   --color-heat-2: var(--heat-2);
@@ -133,6 +134,7 @@
   --platform-hackerrank: #475467;
   --platform-interviewbit: #4338ca;
   --platform-gfg: #2f8d46;
+  --platform-cses: #0284c7;
   --heat-0: #e8e0e2;
   --heat-1: #bfe5cd;
   --heat-2: #78c79f;
@@ -213,6 +215,7 @@
   --platform-hackerrank: #b4bfcc;
   --platform-interviewbit: #8b93ff;
   --platform-gfg: #5fd07a;
+  --platform-cses: #38bdf8;
   --heat-0: #2d2528;
   --heat-1: #1f4d38;
   --heat-2: #2f7a54;

@@ -6,9 +6,10 @@ import { code360 } from "./platforms/code360.js";
 import { hackerrank } from "./platforms/hackerrank.js";
 import { interviewbit } from "./platforms/interviewbit.js";
 import { gfg } from "./platforms/gfg.js";
+import { cses } from "./platforms/cses.js";
 import { atcoder, codeforces } from "./verifiers.js";
 
-export const READERS = { codechef, code360, hackerrank, interviewbit, gfg };
+export const READERS = { codechef, code360, hackerrank, interviewbit, gfg, cses };
 
 /** @typedef {"leetcode" | keyof typeof READERS} SyncPlatformId */
 
@@ -24,7 +25,7 @@ export const SYNC_PLATFORMS = [
     permissions: ["https://leetcode.com/*"],
     visitPrefix: "https://leetcode.com/",
   },
-  ...[codechef, code360, hackerrank, interviewbit, gfg].map((r) => ({
+  ...[codechef, code360, hackerrank, interviewbit, gfg, cses].map((r) => ({
     id: /** @type {keyof typeof READERS} */ (r.id),
     name: r.name,
     kind: /** @type {"page"} */ ("page"),

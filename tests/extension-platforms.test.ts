@@ -33,6 +33,7 @@ import {
   parseOverview,
   parseProblemListPage,
 } from "../extension/lib/platforms/interviewbit.js";
+import { cses, parseProblemList } from "../extension/lib/platforms/cses.js";
 import { extensionUploadSchema } from "@/lib/extension-upload";
 import { isExtensionPlatform } from "@/lib/platforms";
 import { fakePage, loadText } from "./extension-helpers";
@@ -616,6 +617,85 @@ describe("Code360", () => {
   });
 });
 
+describe("cses", () => {
+  const sampleHtml = `
+    <h2>Introductory Problems</h2>
+    <ul class="task-list">
+      <li class="task">
+        <a href="/problemset/task/1068">Weird Algorithm</a>
+        <span class="detail">183544 / 191610</span>
+        <span class="task-score icon full" title="Full score"></span>
+      </li>
+      <li class="task">
+        <a href="/problemset/task/1083">Missing Number</a>
+        <span class="detail">165000 / 170000</span>
+        <span class="task-score icon zero" title="Zero score"></span>
+      </li>
+      <li class="task">
+        <a href="/problemset/task/1069">Repetitions</a>
+        <span class="detail">140000 / 150000</span>
+        <span class="task-score icon"></span>
+      </li>
+    </ul>
+    <h2>Sorting and Searching</h2>
+    <ul class="task-list">
+      <li class="task">
+        <a href="/problemset/task/1621">Distinct Numbers</a>
+        <span class="detail">120000 / 130000</span>
+        <span class="task-score icon full"></span>
+      </li>
+    </ul>
+  `;
+
+  it("parses solved tasks and categorizes them", () => {
+    const res = parseProblemList(sampleHtml);
+    expect(res.ok).toBe(true);
+    if (!res.ok) return;
+
+    expect(res.totalSolved).toBe(2);
+    expect(res.byCategory).toEqual({
+      "Introductory Problems": 1,
+      "Sorting and Searching": 1,
+    });
+    expect(res.solves).toEqual([
+      {
+        id: "1068",
+        title: "Weird Algorithm",
+        url: "https://cses.fi/problemset/task/1068",
+        difficulty: "Introductory Problems",
+        tags: ["Introductory Problems"],
+        solvedAt: null,
+      },
+      {
+        id: "1621",
+        title: "Distinct Numbers",
+        url: "https://cses.fi/problemset/task/1621",
+        difficulty: "Sorting and Searching",
+        tags: ["Sorting and Searching"],
+        solvedAt: null,
+      },
+    ]);
+  });
+
+  it("fails on an unexpected page missing task links", () => {
+    const res = parseProblemList("<html><body>Login required</body></html>");
+    expect(res.ok).toBe(false);
+  });
+
+  it("reads CSES successfully in page context", async () => {
+    const page = fakePage({
+      identity: ["12345"],
+      routes: [{ match: "problemset/list", data: sampleHtml }],
+    });
+    const upload = await cses.read(page.context(cses));
+    expectValidUpload(upload, "cses");
+    expect(upload.loggedInAs).toBe("12345");
+    expect(upload.listComplete).toBe(true);
+    expect(upload.counts?.total).toBe(2);
+    expect(upload.solves).toHaveLength(2);
+  });
+});
+
 describe("uploads", () => {
   it("a counts-only upload (no list) is valid", () => {
     const upload = buildPlatformUpload({
@@ -632,7 +712,7 @@ describe("uploads", () => {
 
 describe("no logged-in user", () => {
   // platform-job.js retries a NotLoggedInError in a fresh tab, so a stale tab isn't the answer.
-  it.each([codechef, code360, hackerrank, interviewbit, gfg])(
+  it.each([codechef, code360, hackerrank, interviewbit, gfg, cses])(
     "$name throws NotLoggedInError",
     async (reader) => {
       await expect(

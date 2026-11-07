@@ -3,7 +3,7 @@
 ![LogN: all your solved problems, synced. Progress, weak topics and what to solve next.](<img width="1400" height="560" alt="banner" src="https://github.com/user-attachments/assets/fc5a645c-0d5a-4011-80aa-2e2847f4b2bb" />
 )
 
-**All your solved problems in one place.** LogN pulls your solves from **Codeforces, AtCoder and LeetCode**, plus **CodeChef, Code360, HackerRank, InterviewBit and GeeksforGeeks** through its browser extension. It maps them onto one topic list, shows where you're behind, and picks what to solve next.
+**All your solved problems in one place.** LogN pulls your solves from **Codeforces, AtCoder and LeetCode**, plus **CodeChef, Code360, HackerRank, InterviewBit, GeeksforGeeks and CSES** through its browser extension. It maps them onto one topic list, shows where you're behind, and picks what to solve next.
 
 **Live at [logn.techsavy.space](https://logn.techsavy.space)**: sign in with GitHub or Google.
 
@@ -34,7 +34,7 @@ LogN maps every platform's tags onto **one topic list** (10 topics, 40 subtopics
 
 ![The LogN extension popup showing verified LeetCode and CodeChef handles with Sync buttons](docs/screenshots/extension.png)
 
-LeetCode keeps your full solved list private, and CodeChef, Code360, HackerRank, InterviewBit and GeeksforGeeks don't allow server-side access. The Chrome extension (`extension/`, Manifest V3) reads them **from your own logged-in browser** instead:
+LeetCode keeps your full solved list private, and CodeChef, Code360, HackerRank, InterviewBit, GeeksforGeeks and CSES don't allow server-side access. The Chrome extension (`extension/`, Manifest V3) reads them **from your own logged-in browser** instead:
 
 - **One-click connect:** sign in to LogN and the extension links itself, with no token to copy.
 - **Syncs on its own:** once when you connect, then when you visit a platform (at most every 6 hours, in that same tab) and LeetCode daily. A switch turns this off, and **Sync** runs it now.
@@ -77,7 +77,7 @@ Each platform exposes different data, and the dashboard labels where numbers com
 | Codeforces | Official API | Every accepted submission, with problem tags and ratings | Some problems are missing from the public catalog; they're kept from the submission's own data |
 | AtCoder | [AtCoder Problems](https://github.com/kenkoooo/AtCoderProblems) (unofficial) | Every accepted submission, with estimated difficulty | **No topic tags** anywhere, so AtCoder doesn't count toward topics. Difficulty is a model estimate |
 | LeetCode | Public GraphQL (unofficial), plus the extension | Lifetime counts by difficulty and tag, the activity calendar, and the **20 most recent** accepted solves; the full solved list through the extension | Marked "partial" until the full list is imported. After that, sync at least once every 20 solves (the daily refresh does this) |
-| CodeChef, Code360, HackerRank, InterviewBit, GFG | The extension, in your logged-in browser | The site's own solved count and difficulty split, plus the solved list and dates where the site has them | No topic tags yet, so they don't count toward topics or recommendations. Counts-only platforms add no weekly board points |
+| CodeChef, Code360, HackerRank, InterviewBit, GFG, CSES | The extension, in your logged-in browser | The site's own solved count and difficulty split, plus the solved list and dates where the site has them | No topic tags yet, so they don't count toward topics or recommendations. Counts-only platforms add no weekly board points |
 
 Other things to know:
 - **LeetCode topic numbers are estimates.** They come from LeetCode's lifetime per-tag counts, which overlap, and LeetCode only counts 47 broad tags per user.

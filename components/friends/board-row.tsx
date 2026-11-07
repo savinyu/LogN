@@ -15,6 +15,7 @@ const SEGMENT: Record<PlatformId, string> = {
   hackerrank: "bg-platform-hackerrank",
   interviewbit: "bg-platform-interviewbit",
   gfg: "bg-platform-gfg",
+  cses: "bg-platform-cses",
 };
 
 function plural(n: number, one: string, many: string) {

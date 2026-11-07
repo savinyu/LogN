@@ -17,6 +17,7 @@ export const PROBLEM_HOSTS = /** @type {Record<string, string[]>} */ ({
   hackerrank: ["www.hackerrank.com"],
   interviewbit: ["www.interviewbit.com"],
   gfg: ["www.geeksforgeeks.org", "practice.geeksforgeeks.org"],
+  cses: ["cses.fi", "www.cses.fi"],
 });
 
 const MAX_SOLVES = 10_000;

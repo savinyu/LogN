@@ -19,6 +19,7 @@
     "https://www.hackerrank.com/*",
     "https://www.interviewbit.com/*",
     "https://www.geeksforgeeks.org/*",
+    "https://cses.fi/*",
     "http://localhost/*"
   ],
   "background": { "service_worker": "background.js", "type": "module" },

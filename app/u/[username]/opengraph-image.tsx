@@ -27,6 +27,7 @@ const PLATFORM_HEX: Record<PlatformId, string> = {
   hackerrank: "#475467",
   interviewbit: "#4338ca",
   gfg: "#2f8d46",
+  cses: "#0284c7",
 };
 
 export default async function Image({ params }: { params: Promise<{ username: string }> }) {

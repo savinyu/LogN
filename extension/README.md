@@ -121,7 +121,7 @@ the upload is dropped if the account changed.
   no CORS headers, so without its host access neither connecting nor uploading works.
 - Optional host access, asked when you click Connect (or on a platform's first Sync if declined),
   never at install: `www.codechef.com`, `www.naukri.com` (Code360), `www.hackerrank.com`,
-  `www.interviewbit.com`, `www.geeksforgeeks.org`, `codeforces.com` and `atcoder.jp` (verification
+  `www.interviewbit.com`, `www.geeksforgeeks.org`, `cses.fi`, `codeforces.com` and `atcoder.jp` (verification
   only), and `localhost` when the LogN URL is a dev server. No wildcard hosts: `tests/extension.test.ts` checks the manifest for them.
 
 Privacy policy: <https://logn.techsavy.space/privacy> (`app/privacy/page.tsx`).

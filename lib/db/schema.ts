@@ -169,6 +169,7 @@ export const EXTENSION_PLATFORMS = [
   "hackerrank",
   "interviewbit",
   "gfg",
+  "cses",
 ] as const;
 /** New values go at the end: Postgres enums only append. */
 export const PLATFORMS = [...SYNCED_PLATFORMS, ...EXTENSION_PLATFORMS] as const;

@@ -112,6 +112,7 @@ describe("platformForUrl", () => {
     expect(id("https://www.interviewbit.com/practice/")).toBe("interviewbit");
     expect(id("https://www.geeksforgeeks.org/problems/x/1")).toBe("gfg");
     expect(id("https://www.naukri.com/code360/problems/x")).toBe("code360");
+    expect(id("https://cses.fi/problemset/list/")).toBe("cses");
   });
 
   it("ignores naukri.com outside Code360, look-alike hosts and LogN itself", () => {

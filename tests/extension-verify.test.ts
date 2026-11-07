@@ -54,6 +54,7 @@ describe("registry", () => {
       "hackerrank",
       "interviewbit",
       "gfg",
+      "cses",
     ]);
     expect(SYNC_PLATFORMS.map((p) => p.id)).not.toContain("codeforces");
     expect(VERIFY_PLATFORMS.every((p) => p.kind === "verify")).toBe(true);

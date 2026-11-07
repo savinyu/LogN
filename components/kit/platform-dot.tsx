@@ -10,6 +10,7 @@ const COLOR: Record<PlatformId, string> = {
   hackerrank: "bg-platform-hackerrank",
   interviewbit: "bg-platform-interviewbit",
   gfg: "bg-platform-gfg",
+  cses: "bg-platform-cses",
 };
 
 /** A small platform-coloured dot (Coach's .dot). Pass `title` to expose it to screen readers. */

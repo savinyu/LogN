@@ -25,6 +25,7 @@ const STROKE: Record<PlatformId, string> = {
   hackerrank: "stroke-platform-hackerrank",
   interviewbit: "stroke-platform-interviewbit",
   gfg: "stroke-platform-gfg",
+  cses: "stroke-platform-cses",
 };
 const FILL: Record<PlatformId, string> = {
   codeforces: "fill-platform-codeforces",
@@ -35,6 +36,7 @@ const FILL: Record<PlatformId, string> = {
   hackerrank: "fill-platform-hackerrank",
   interviewbit: "fill-platform-interviewbit",
   gfg: "fill-platform-gfg",
+  cses: "fill-platform-cses",
 };
 
 const W = 560;

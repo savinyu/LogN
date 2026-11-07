@@ -15,6 +15,7 @@ const FILL: Record<PlatformId, string> = {
   hackerrank: "fill-platform-hackerrank",
   interviewbit: "fill-platform-interviewbit",
   gfg: "fill-platform-gfg",
+  cses: "fill-platform-cses",
 };
 
 const SWATCH: Record<PlatformId, string> = {
@@ -26,6 +27,7 @@ const SWATCH: Record<PlatformId, string> = {
   hackerrank: "bg-platform-hackerrank",
   interviewbit: "bg-platform-interviewbit",
   gfg: "bg-platform-gfg",
+  cses: "bg-platform-cses",
 };
 
 export interface StackedColumn {

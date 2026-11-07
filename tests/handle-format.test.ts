@@ -93,6 +93,8 @@ describe("checkHandleFormat", () => {
     expect(await valid("leetcode", "https://leetcode.com/u/neal_wu/")).toBe("neal_wu");
     expect(await valid("leetcode", "https://leetcode.com/neal_wu/")).toBe("neal_wu");
     expect(await valid("leetcode", "  leetcode.com/u/neal_wu  ")).toBe("neal_wu");
+    expect(await valid("cses", "https://cses.fi/user/12345")).toBe("12345");
+    expect(await valid("cses", "https://cses.fi/problemset/user/12345/")).toBe("12345");
   });
 
   it("does not treat a URL for another platform as valid", async () => {

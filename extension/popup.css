@@ -62,6 +62,7 @@
   --platform-hackerrank: #475467;
   --platform-interviewbit: #4338ca;
   --platform-gfg: #2f8d46;
+  --platform-cses: #0284c7;
 }
 
 /* Dark follows the system unless the theme button chose light. */
@@ -91,6 +92,7 @@
     --platform-hackerrank: #b4bfcc;
     --platform-interviewbit: #8b93ff;
     --platform-gfg: #5fd07a;
+    --platform-cses: #38bdf8;
   }
 }
 :root[data-theme="dark"] {
@@ -118,6 +120,7 @@
   --platform-hackerrank: #b4bfcc;
   --platform-interviewbit: #8b93ff;
   --platform-gfg: #5fd07a;
+  --platform-cses: #38bdf8;
 }
 
 * {
@@ -412,6 +415,9 @@ input[type="url"]:focus-visible {
 }
 .dot.gfg {
   background: var(--platform-gfg);
+}
+.dot.cses {
+  background: var(--platform-cses);
 }
 .info {
   flex: 1;

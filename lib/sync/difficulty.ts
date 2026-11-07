@@ -33,6 +33,24 @@ const LABELS: Partial<Record<PlatformId, Record<string, number>>> = {
   hackerrank: { easy: 1, medium: 3, hard: 4, advanced: 5, expert: 5 },
   // CodeChef's practice labels, when there's no numeric rating.
   codechef: { beginner: 1, easy: 1, medium: 3, hard: 4, challenge: 5 },
+  // CSES categories and difficulty labels when given.
+  cses: {
+    introductory: 1,
+    introductory_problems: 1,
+    easy: 1,
+    sorting_and_searching: 2,
+    medium: 3,
+    dynamic_programming: 3,
+    graph_algorithms: 3,
+    tree_algorithms: 3,
+    mathematics: 3,
+    string_algorithms: 3,
+    geometry: 4,
+    hard: 4,
+    advanced_techniques: 4,
+    additional_problems: 4,
+    advanced: 5,
+  },
 };
 
 function labelKey(raw: string): string {
